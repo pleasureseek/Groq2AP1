@@ -19,9 +19,8 @@ COPY . .
 
 RUN docker build -t image .
 
+RUN docker run -d -p 8080:8080 image
 
 RUN docker run -d -p 8080:8080 ghcr.io/star-studio-develop/groq2api:latest
-
-RUN docker run -d -p 8080:8080 image
 
 EXPOSE WEBSITE http://localhost:8080
